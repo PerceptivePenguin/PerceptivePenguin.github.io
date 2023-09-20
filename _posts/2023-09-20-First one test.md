@@ -1,6 +1,7 @@
 ---  
 blog: _posts  
 share: true  
+image: assets/fish.png  
 ---  
 ```java  
 import java.util.*;  
