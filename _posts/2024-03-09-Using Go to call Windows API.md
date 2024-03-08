@@ -1,8 +1,8 @@
 ---  
 blog: _posts  
+share: true  
 tags:  
   - Golang  
-share: true  
 ---  
   
 In creating [Damon](https://github.com/jet/damon), the supervisor application that constrains Jet’s Windows microservices in [Nomad](https://nomadproject.io/), we had to interact directly with the Windows API. The Windows API grants access to the more advanced features of the OS, including creation and configuration of JobObjects and Security Token manipulation. Fortunately, Go provides a way to talk to the OS via the `syscall` package. Unfortunately, in order to make use of most of the APIs, we need to rely on `unsafe` memory management.  
