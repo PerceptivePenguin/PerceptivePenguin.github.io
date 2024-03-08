@@ -2,7 +2,7 @@
 blog: _posts  
 share: true  
 tags:  
-  - test  
+  - Test  
 ---  
 ```java  
 import java.util.*;  
