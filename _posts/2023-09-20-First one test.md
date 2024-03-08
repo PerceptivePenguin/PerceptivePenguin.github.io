@@ -1,6 +1,8 @@
 ---  
 blog: _posts  
 share: true  
+tags:  
+  - test  
 ---  
 ```java  
 import java.util.*;  
