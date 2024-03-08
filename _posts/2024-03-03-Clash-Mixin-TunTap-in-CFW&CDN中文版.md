@@ -1,6 +1,8 @@
 ---  
 blog: _posts  
 share: true  
+tags:  
+  - Clash  
 ---  
   
 本次介绍利用Clash for Windows（以下简称CFW）和Clash .Net（以下简称CDN）两个软件中的mixin功能实现TUN/TAP虚拟网卡接管流量  
