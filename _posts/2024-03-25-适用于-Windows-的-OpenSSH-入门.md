@@ -4,7 +4,6 @@ share: true
 tags:  
   - windows_server  
 ---  
-## 本文内容  
   
 1. [先决条件](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#prerequisites)  
 2. [安装适用于 Windows 的 OpenSSH](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows)  
