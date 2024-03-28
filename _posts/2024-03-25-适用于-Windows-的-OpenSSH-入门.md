@@ -93,6 +93,20 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 }  
 ```  
   
+注意，`OpenSSH` 默认服务端口是 `22` ，我们可以指定OpenSSH的端口数字。  
+  
+```powershell  
+New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22  
+```  
+  
+将Allow -LocalPort 22中的22改为需要的数字即可。  
+  
+另一种方法，修改localport后的参数。  
+  
+```powershell  
+netsh advfirewall firewall add rule name=sshd dir=in action=allow protocol=TCP localport=22  
+```  
+  
 ## 连接到 OpenSSH 服务器  
   
 安装后，可以从安装了 OpenSSH 客户端的 Windows 或 Windows Server 设备连接到 OpenSSH 服务器。 在 PowerShell 提示符下，运行以下命令。  
