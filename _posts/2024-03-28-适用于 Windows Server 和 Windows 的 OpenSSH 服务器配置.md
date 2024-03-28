@@ -14,8 +14,6 @@ tags:
   
 OpenSSH 在 [OpenSSH.com](https://www.openssh.com/manual.html) 上在线维护有关配置选项的详细文档，本文档集中没有重述。  
   
-[](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration#openssh-configuration-files)  
-  
 ## OpenSSH 配置文件  
   
 OpenSSH 具有用于服务器和客户端设置的配置文件。 OpenSSH 是开源软件，从 Windows Server 2019 和 Windows 10（内部版本 1809）开始添加到 Windows Server 和 Windows 客户端操作系统中。 因此，这里不再赘述 OpenSSH 配置文件的开源文档。 客户端配置文件可以在 [ssh_config 手册页](https://man.openbsd.org/ssh_config)中找到，而 OpenSSH 服务器配置文件可以在 [sshd_config 手册页](https://man.openbsd.org/sshd_config)中找到。  
@@ -27,6 +25,7 @@ Open SSH 服务器 (sshd) 默认情况下从 %programdata%\ssh\sshd_config 中�
 1. 通过使用 -F 参数启动 ssh.exe，指定配置文件的路径和该文件中的条目名称。  
 2. 位于 %userprofile%\.ssh\config 的用户配置文件。  
 3. 位于 %programdata%\ssh\ssh_config 的系统范围配置文件。  
+  
 ## 为 Windows 中的 OpenSSH 配置默认 shell  
   
 默认命令 shell 提供用户使用 SSH 连接到服务器时看到的体验。 初始默认 Windows 是 Windows Command shell (cmd.exe)。 Windows 还包括了 PowerShell，第三方命令 shell 也可用于 Windows，并可配置为服务器的默认 shell。  
