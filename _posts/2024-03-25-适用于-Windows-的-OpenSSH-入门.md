@@ -34,15 +34,13 @@ OpenSSH 兼容的客户端可用于连接到 Windows Server 和 Windows 客户�
 若要验证环境，请打开提升的 PowerShell 会话并执行以下操作：  
   
 - 键入 _winver.exe_ ，然后按 Enter 查看 Windows 设备的版本详细信息。  
-- 运行 `$PSVersionTable.PSVersion`。 验证主要版本至少为 5，次要版本至少为 1。 详细了解[如何在 Windows 上安装 PowerShell](https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows)。  
+- 运行 `$PSVersionTable.PSVersion`。 验证主要版本至少为 5，次要版本至少为 1。  
 - 运行下面的命令。 当你是内置 Administrator 组的成员时，输出将显示 `True`。  
 ```powershell  
 (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)  
 ```  
   
 ## 安装适用于 Windows 的 OpenSSH  
-  
-### GUI  
   
 ### PowerShell  
   
@@ -107,12 +105,24 @@ New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (
 netsh advfirewall firewall add rule name=sshd dir=in action=allow protocol=TCP localport=22  
 ```  
   
+查看服务是否启动  
+  
+```powershell  
+Get-Service sshd  
+```  
+  
 ## 连接到 OpenSSH 服务器  
   
-安装后，可以从安装了 OpenSSH 客户端的 Windows 或 Windows Server 设备连接到 OpenSSH 服务器。 在 PowerShell 提示符下，运行以下命令。  
+安装后，可以从安装了 OpenSSH 客户端的 Windows 或 Windows Server 设备连接到 OpenSSH 服务器。 若使用默认端口22，在 PowerShell 提示符下，运行以下命令。  
   
 ```powershell  
 ssh domain\username@servername  
+```  
+  
+若server监听的是自定义端口，应使用如下命令，Port处填入自定义端口：  
+  
+```powershell  
+ssh -p port domain\username@servername  
 ```  
   
 连接后，会收到类似如以下输出的消息。  
@@ -153,4 +163,10 @@ Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 现在你已安装适用于 Windows 的 OpenSSH，下面一些文章可能对你的使用有帮助：  
   
 - 详细了解如何在 [OpenSSH 密钥管理](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_keymanagement)中使用密钥对进行身份验证  
-- 详细了解[适用于 Windows 的 OpenSSH 服务器配置](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration)
+- 详细了解[适用于 Windows 的 OpenSSH 服务器配置](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration)  
+  
+## 参考文章  
+  
+- [如何简单快速地在 Windows 上搭建 OpenSSH 服务？看这一篇就够了！](https://www.sysadm.cc/index.php/xitongyunwei/1032-how-to-easily-and-quickly-build-openssh-service-on-windows-just-read-this-one)  
+- [windows10安装内置opensshserver并修改端口号](https://www.bilibili.com/read/cv2421856/)  
+- [适用于 Windows 的 OpenSSH 入门](https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
