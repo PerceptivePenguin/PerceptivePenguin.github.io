@@ -17,8 +17,6 @@ OpenSSH 是一款用于远程登录的连接工具，它使用 SSH 协议。 它
   
 OpenSSH 兼容的客户端可用于连接到 Windows Server 和 Windows 客户端设备。  
   
- 重要  
-  
 如果你是从 GitHub 存储库 ([PowerShell/Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH)) 下载的 OpenSSH 试用版，请按照该网页中列出的说明操作，而不是遵照本文列出的说明。 Win32-OpenSSH 存储库中的一些信息与预发行产品相关，相应产品在发行之前可能会进行重大修改。 Microsoft 不对此处提供的信息作任何明示或默示的担保。  
   
 ## 先决条件  
@@ -91,7 +89,7 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 }  
 ```  
   
-注意，`OpenSSH` 默认服务端口是 `22` ，我们可以指定OpenSSH的端口数字。  
+注意，`OpenSSH` 默认服务端口是 `22` ，我们可以指定OpenSSH的端口。  
   
 ```powershell  
 New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22  
