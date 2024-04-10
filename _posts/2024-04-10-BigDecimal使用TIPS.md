@@ -4,6 +4,7 @@ tags:
 share: true  
 blog: _posts  
 ---  
+## BigDecimal使用TIPS  
 ## 1.浮点数初始化的坑  
   
 **反例:**  
