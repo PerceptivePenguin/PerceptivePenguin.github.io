@@ -4,7 +4,6 @@ tags:
 blog: _posts  
 share: true  
 ---  
-# Introduction  
   
 In many of the jobs I’ve had over the years, there has been a need to do sequential operations that depended on some operational state.  
   
