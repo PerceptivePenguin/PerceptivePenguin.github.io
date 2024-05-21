@@ -4,7 +4,6 @@ tags:
 blog: _posts  
 share: true  
 ---  
-## Usage  
   
 The quickest way to get started with Buttons is to use the Button Maker. You can open the Button Maker from the Command Palette. Here is an overview of the Button Maker options.  
   
